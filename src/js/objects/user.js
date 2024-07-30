@@ -3,17 +3,24 @@ const user = {
     name: '',
     bio: '',
     userName: '',
+    followers: 0,
+    following: 0,
     repositories: [],
-
-    setInfo(githubUser) {
-        this.avatarUrl = githubUser.avatar_url;
-        this.name = githubUser.name;
-        this.bio = githubUser.bio;
-        this.userName = githubUser.login
+    events: [],
+    setInfo(gitHubUser) {
+        this.avatarUrl = gitHubUser.avatar_url;
+        this.name = gitHubUser.name;
+        this.bio = gitHubUser.bio;
+        this.userName = gitHubUser.login;
+        this.followers = gitHubUser.followers;
+        this.following = gitHubUser.following;
     },
     setRepositories(repositories) {
-        this.repositories = repositories
+        this.repositories = repositories;
+    },
+    setEvents(events) {
+        this.events = events;
     }
 }
-
+  
 export { user }
